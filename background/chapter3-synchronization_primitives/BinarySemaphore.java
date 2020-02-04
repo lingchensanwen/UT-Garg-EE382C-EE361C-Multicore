@@ -13,3 +13,6 @@ public class BinarySemaphore {
         notify();
     }
 }
+//when one wants to enter the CS section, it checks whether the value is false, if false, 
+//it shows there are people in the bathroom,
+//so I would choose to spin and wait. If the value is true, I could go in bathroom, and I should set the value to false
