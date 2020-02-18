@@ -7,14 +7,14 @@ public class SingleQueue { // Single Producer Single Consumer
     items = new Object[size];
   }
   public void put(Object x) {
-    while (tail - head == items.length) {}; //busywait
+    while (tail - head == items.length) {}; //busywait //check whether it is full
     items[tail % items.length] = x;
     tail++;
   }
   public Object get() {
-    while (tail - head == 0) {}; // busywait
+    while (tail - head == 0) {}; // busywait //check whether it is empty
     Object x = items[head % items.length];
     head++;
     return x;
   }
-}
+}// this one is faster 
