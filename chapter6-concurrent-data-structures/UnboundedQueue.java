@@ -16,7 +16,7 @@ public class UnboundedQueue<T> {
     deqLock.lock();
     try {
       if (head.next == null) {
-        throw new EmptyException();
+        throw new EmptyException();//queue is empty
       }
       result = head.next.value;
       head = head.next;
